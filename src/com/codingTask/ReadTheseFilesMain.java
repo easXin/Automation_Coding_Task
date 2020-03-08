@@ -7,6 +7,7 @@ import com.dataReader.*;
 
 public class ReadTheseFilesMain {
 	private static final Pattern reg_Num = Pattern.compile("-?\\d+(\\.\\d+)?");
+	private static Scanner sc;
 	private static CSVReader r_csv;
 	private static PDFReader r_pdf;
 	private static TXTReader r_txt;
@@ -15,7 +16,7 @@ public class ReadTheseFilesMain {
 	private static DataBaseReader r_db;
 	public static void main(String[] args) {
 		String menuOption = "";
-		Scanner sc = new Scanner(System.in);
+		sc = new Scanner(System.in);
 		System.out.println("\n                    Coding Task 1.0.0            \n");
 		System.out.println("Select an Option to Retrieve Student Information");
 		System.out.println("Option:\t1.CSV\n\t2.TXT\n\t3.Custom Input\n\t4.Data Base\n\t5.PDF");
@@ -43,7 +44,11 @@ public class ReadTheseFilesMain {
 			r_txt.Read("C:\\Users\\codin\\eclipse-workspace\\CodingTasks\\src\\com\\testingFile\\txtTestingFile.txt");
 			break;
 		case 3:
-			
+			String str ="";
+			r_input = new InputReader();
+			System.out.print("Please enter : ");
+			str = sc.nextLine();
+			r_input.Read(str);
 			break;
 		case 4:
 			break;
