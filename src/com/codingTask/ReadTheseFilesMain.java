@@ -17,7 +17,7 @@ public class ReadTheseFilesMain {
 		String menuOption = "";
 		Scanner sc = new Scanner(System.in);
 		System.out.println("\n                    Coding Task 1.0.0            \n");
-		System.out.println("Where do you like to retrieve the data from");
+		System.out.println("Select an Option to Retrieve Student Information");
 		System.out.println("Option:\t1.CSV\n\t2.TXT\n\t3.Custom Input\n\t4.Data Base\n\t5.PDF");
 		System.out.print("Enter : ");
 		
@@ -40,7 +40,7 @@ public class ReadTheseFilesMain {
 			break;
 		case 2:
 			r_txt = new TXTReader();
-			
+			r_txt.Read("C:\\Users\\codin\\eclipse-workspace\\CodingTasks\\src\\com\\testingFile\\txtTestingFile.txt");
 			break;
 		case 3:
 			
