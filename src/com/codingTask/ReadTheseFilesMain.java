@@ -7,19 +7,19 @@ import com.dataReader.*;
 
 public class ReadTheseFilesMain {
 	private static final Pattern reg_Num = Pattern.compile("-?\\d+(\\.\\d+)?");
-	private static CSVReader r_csv;
-	private static PDFReader r_pdf;
-	private static TXTReader r_txt;
-	private static InputReader r_input;
-
-	private static DataBaseReader r_db;
+	private static Scanner sc;
+	private static final CSVReader r_csv;
+	private static final PDFReader r_pdf;
+	private static final TXTReader r_txt;
+	private static final InputReader r_input;
+	private static final DataBaseReader r_db;
 	public static void main(String[] args) {
 		String menuOption = "";
-		Scanner sc = new Scanner(System.in);
+		sc = new Scanner(System.in);
 		System.out.println("\n                    Coding Task 1.0.0            \n");
-		System.out.println("Where do you like to retrieve the data from");
-		System.out.println("Option:\t1.CSV\n\t2.TXT\n\t3.Custom Input\n\t4.Data Base\t5.PDF");
-		System.out.print("Enter :");
+		System.out.println("Select an Option to Retrieve Student Information");
+		System.out.println("Option:\t1.CSV\n\t2.TXT\n\t3.Custom Input\n\t4.Data Base\n\t5.PDF");
+		System.out.print("Enter : ");
 		
 		menuOption = sc.nextLine();
 		
@@ -33,24 +33,39 @@ public class ReadTheseFilesMain {
 	
 	public static void selectionMenu(String menuOption) {
 		Integer selectedOption = Integer.parseInt(menuOption);
+		String filePath="";
 		switch(selectedOption) {
 		case 1:
 			r_csv = new CSVReader();
-			r_csv.Read("C:\\Users\\codin\\eclipse-workspace\\codingTask\\src\\com\\testingFile\\csvTestingFile.csv");
+			filePath="C:\\Users\\codin\\eclipse-workspace\\codingTask\\src\\com\\testingFile\\csvTestingFile.csv";
+			r_csv.Read(filePath);
 			break;
 		case 2:
+			r_txt = new TXTReader();
+			filePath="C:\\Users\\codin\\eclipse-workspace\\CodingTasks\\src\\com\\testingFile\\txtTestingFile.txt"
+			r_txt.Read(filePath);
 			break;
 		case 3:
+			String str ="";
+			r_input = new InputReader();
+			System.out.print("Please enter : ");
+			str = sc.nextLine();
+			r_input.Read(str);
 			break;
 		case 4:
+			r_db = new DataBaseReader();
+			String jdbcUrl = "jdbc:mysql://localhost:3306/coding_task_db";
+			r_db.Read(jdbcUrl);
 			break;
 		case 5:
+			r_pdf = new PDFReader();
+			filePath="C:\\Users\\codin\\eclipse-workspace\\CodingTasks\\src\\com\\testingFile\\pdfTestingFile.pdf";
+			r_pdf.Read(filePath);
 			break;
 		default:
 			System.out.println("Unknown behavior, program terminated");
-		
 		}
-		
+		System.out.prinln("Thank you to use my App");
 	}
 
 	private static boolean isNumeric(String str_num) {
