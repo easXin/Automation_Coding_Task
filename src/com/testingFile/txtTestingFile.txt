@@ -1,0 +1,5 @@
+S_ID	fName	lName	Gender	School
+1		Jose	Parra	M	CUNY, JJAY
+2		Eric	Wang	M	SUNY, Buffalo
+3		Tyler	Zhao	M	CUNY, Hunter
+4		David	Pinedo	M	SUNY, Stony Brook
