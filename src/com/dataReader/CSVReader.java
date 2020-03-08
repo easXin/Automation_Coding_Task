@@ -1,16 +1,9 @@
 package com.dataReader;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.LinkedList;
-import java.util.ListIterator;
 import java.util.Scanner;
 
 import com.codingTask.ReadTheseFiles;
@@ -37,29 +30,13 @@ public class CSVReader implements ReadTheseFiles {
 		}
 	}
 
-	public void check(String arr[]) {
-		for(int i=0; i<arr.length; i++) {
-			System.out.print(arr[i]+" ");
-		}
-		System.out.println();
-	}
 	@Override
 	public void Print() {
-		ListIterator<String>iterator;
-		//for(int i=0; i<list.size(); i++) {
-		System.out.println(list.size());
-			iterator = list.get(0).listIterator();
-			while(iterator.hasNext()) {
-				System.out.print(iterator.next() +" ");
-			}
-			System.out.println();
-		//}
 		
 	}
 
 	@Override
 	public void Save() {
-		// TODO Auto-generated method stub
 		
 	}
 
