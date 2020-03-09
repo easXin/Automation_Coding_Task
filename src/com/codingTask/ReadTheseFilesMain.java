@@ -11,14 +11,13 @@ public class ReadTheseFilesMain {
 	private static PDFReader r_pdf;
 	private static TXTReader r_txt;
 	private static InputReader r_input;
-
 	private static DataBaseReader r_db;
 	public static void main(String[] args) {
 		String menuOption = "";
 		Scanner sc = new Scanner(System.in);
 		System.out.println("\n                    Coding Task 1.0.0            \n");
 		System.out.println("Where do you like to retrieve the data from");
-		System.out.println("Option:\t1.CSV\n\t2.TXT\n\t3.Custom Input\n\t4.Data Base\t5.PDF");
+		System.out.println("Option:\t1.CSV\n\t2.TXT\n\t3.Custom Input\n\t4.Data Base\n\t5.PDF");
 		System.out.print("Enter :");
 		
 		menuOption = sc.nextLine();
@@ -45,6 +44,8 @@ public class ReadTheseFilesMain {
 		case 4:
 			break;
 		case 5:
+			r_pdf = new PDFReader();
+			r_pdf.Read("C:\\Users\\codin\\eclipse-workspace\\CodingTasks\\src\\com\\testingFile\\pdfTestingFile.pdf");
 			break;
 		default:
 			System.out.println("Unknown behavior, program terminated");
