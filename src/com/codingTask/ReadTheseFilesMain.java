@@ -12,7 +12,6 @@ public class ReadTheseFilesMain {
 	private static PDFReader r_pdf;
 	private static TXTReader r_txt;
 	private static InputReader r_input;
-
 	private static DataBaseReader r_db;
 	public static void main(String[] args) {
 		String menuOption = "";
@@ -51,6 +50,9 @@ public class ReadTheseFilesMain {
 			r_input.Read(str);
 			break;
 		case 4:
+			r_db = new DataBaseReader();
+			String jdbcUrl = "jdbc:mysql://localhost:3306/coding_task_db";
+			r_db.Read(jdbcUrl);
 			break;
 		case 5:
 			break;
