@@ -29,15 +29,4 @@ public class CSVReader implements ReadTheseFiles {
 			e.getStackTrace();
 		}
 	}
-
-	@Override
-	public void Print() {
-		
-	}
-
-	@Override
-	public void Save() {
-		
-	}
-
 }
